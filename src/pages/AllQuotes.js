@@ -15,13 +15,13 @@ export default function AllQuotes() {
   if(status === 'pending'){
     return (
       <div className='centered'>
-        <LoadingSpinner></LoadingSpinner>
+        <LoadingSpinner/>
       </div>
     )
   }
   if(error)
   return <p className='centered focused'>{error}</p>
   if(status === 'completed'&&(!loadedQuote ||loadedQuote.length === 0))
-    return <NoQuotesFound></NoQuotesFound>
-  return <QuoteList quotes={loadedQuote}> </QuoteList>;
+    return <NoQuotesFound/>
+  return <QuoteList quotes={loadedQuote}/>;
 };

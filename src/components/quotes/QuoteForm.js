@@ -1,5 +1,4 @@
 import { useRef , useState} from 'react';
-import { Prompt } from 'react-router-dom';
 
 import Card from '../ui/Card'
 import LoadingSpinner from '../ui/LoadingSpinner';
@@ -29,10 +28,6 @@ const QuoteForm = (props) => {
   }
   return (
     <>
-      <Prompt
-        when={isEntered}
-        message="Please save your changes before proceeding"
-      />
       <Card>
         <form
           onFocus={formFocusedHandler}

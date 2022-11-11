@@ -30,13 +30,12 @@ const Comments = () => {
   if (status === "pending") {
     comments = (
       <div className="centered">
-        {" "}
-        <LoadingSpinner></LoadingSpinner>
+        <LoadingSpinner/>
       </div>
     );
   }
   if(status === 'completed' && (loadedComments && loadedComments.length > 0)){
-    comments = <CommentsList comments = {loadedComments}></CommentsList>;
+    comments = <CommentsList comments = {loadedComments}/>;
   }
 
   if(status === 'completed' && (!loadedComments || loadedComments.length === 0)){

@@ -1,4 +1,4 @@
-import { useParams,Route,Link, useRouteMatch } from "react-router-dom";
+import { useParams,Outlet,Link } from "react-router-dom";
 import Comments from '../components/comments/Comments'
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import { getSingleQuote } from "../lib/api";
@@ -8,7 +8,6 @@ import LoadingSpinner from "../components/ui/LoadingSpinner";
 
 
 export default function QuoteDetail() {
-  const match  = useRouteMatch();
   const params = useParams()
   const {quoteId} = params;
 
@@ -38,18 +37,7 @@ export default function QuoteDetail() {
         text={loadedQuote.text}
         author={loadedQuote.author}
       ></HighlightedQuote>
-      <Route path={`${match.path}`} exact>
-        <div className="centered">
-          <Link className="btn-flat" to={`${match.url}/comments`}>
-            {" "}
-            Load Comment
-          </Link>
-        </div>
-      </Route>
-
-      <Route path={`${match.path}/comments`}>
-        <Comments></Comments>
-      </Route>
+      <Outlet/>
     </>
   );
   

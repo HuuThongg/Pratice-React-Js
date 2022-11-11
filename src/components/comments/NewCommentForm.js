@@ -32,7 +32,7 @@ const NewCommentForm = (props) => {
     <form className={classes.form} onSubmit={submitFormHandler}>
       {status ==='pending' && (
         <div className='centered'>
-          <LoadingSpinner></LoadingSpinner>
+          <LoadingSpinner/>
         </div>
       )}
       <div className={classes.control} onSubmit={submitFormHandler}>

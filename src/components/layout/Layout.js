@@ -3,7 +3,7 @@ import MainNavigation from './MainNavigation'
 
 export default function Layout(props) {
   return <>
-    <MainNavigation></MainNavigation>
+    <MainNavigation/>
     <main className={classes.main}>{props.children}</main>
   </>
 };
